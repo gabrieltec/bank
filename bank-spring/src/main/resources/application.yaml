@@ -1,0 +1,4 @@
+
+org:
+  country:
+    endpoint: http://api.worldbank.org/v2/country
