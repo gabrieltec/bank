@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Lista de Paises</span>
+    <span class="spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-form-field>
+  <mat-label>selecionar</mat-label>
+  <mat-select (selectionChange)="onChangeSelecao($event.value)">
+    <mat-option *ngFor="let opcao of opcoesSelecao" [value]="opcao">
+      {{ opcao }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-list>
+  <h3 mat-subheader>Idicadores Ano</h3>
+  <mat-list-item *ngFor="let projeto of projetos">
+    <span matListItemTitle>{{ projeto?.date }}</span>
+    <span matListItemLine>{{ projeto?.indicator.value }}</span>
+  </mat-list-item>
+</mat-list>
